@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <script>
+        function calculator(left, action, right){
+            actions = ['+', '-', '*', '/'];
+
+            if (isNaN(left)){
+                throw 'Left parameter is not a number';
+            }
+            if (isNaN(right)){
+                throw 'Right parameter is not a number';
+            }
+            if (!actions.includes(action)){
+                throw 'not an action';
+            }
+            else{
+                return eval(String(left) + action + String(right));
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+  <script>
+    try {
+        document.writeln(calculator('22', '/', '7'));
+    } 
+    catch (e) {
+        document.writeln(e);
+    }
+  </script>
+
+</body>
+
+</html>    
