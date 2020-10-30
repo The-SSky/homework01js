@@ -15,7 +15,6 @@
             number = Math.abs(number);
 
             i = parseInt(number = (+number || 0).toFixed(decimals)) + "";
-            document.writeln('<p>' + number + '</p>')
             if( (j = i.length) > 3 ){
                 j = j % 3;
             } else{
@@ -25,9 +24,6 @@
             km = (j ? i.substr(0, j) + thousands_sep : "");
             kw = i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands_sep);
             kd = (decimals ? dec_point + Math.abs(number - i).toFixed(decimals).replace(/-/, 0).slice(2) : "");
-            document.writeln('<p>' + km + '</p>');
-            document.writeln('<p>' + kw + '</p>');
-            document.writeln('<p>' + kd + '</p>');                       
             return sign + km + kw + kd;
         }
 
